@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ダミースライド（3ページ）</title>
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/black.css" />
+    <style>
+      .reveal h1,
+      .reveal h2 {
+        text-transform: none;
+      }
+      .reveal .muted {
+        opacity: 0.65;
+        font-size: 0.85em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>スライド 1</h1>
+          <p>ダミー用の1ページ目です。</p>
+          <p class="muted">→ キーで次へ（矢印 / Space）</p>
+        </section>
+
+        <section>
+          <h2>スライド 2</h2>
+          <p>プレースホルダー文言です。</p>
+          <ul>
+            <li>項目 A</li>
+            <li>項目 B</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>スライド 3</h2>
+          <p>最後のダミーページ。</p>
+          <p class="muted">おわり</p>
+        </section>
+      </div>
+    </div>
+
+    <script src="node_modules/reveal.js/dist/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        slideNumber: "c/t",
+        transition: "slide",
+      });
+    </script>
+  </body>
+</html>
