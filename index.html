@@ -4,52 +4,416 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ダミースライド（3ページ）</title>
-    <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css" />
-    <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/black.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css"
+    />
     <style>
-      .reveal h1,
-      .reveal h2 {
-        text-transform: none;
+      .backgrounds {
+        filter: opacity(0.2);
       }
-      .reveal .muted {
-        opacity: 0.65;
-        font-size: 0.85em;
+
+      .reveal section {
+        box-sizing: border-box;
+        padding-top: 1em;
+        padding-inline: 1em;
+        text-align: left;
+
+        p {
+          font-size: 0.6em;
+        }
+
+        table {
+          margin: 0 !important;
+          font-size: 0.5em;
+
+          th {
+            font-weight: normal;
+            white-space: nowrap;
+            padding: 0.8em 1em !important;
+          }
+
+          td {
+            padding: 0.8em 1em !important;
+          }
+        }
+
+        h1 {
+          /* ① 背景にグラデーションを設定 */
+          background: linear-gradient(45deg, #ff007f, #003cff);
+          /* ② 背景を文字の形にくり抜く（Safari/Chrome用のベンダープレフィックス必須） */
+          -webkit-background-clip: text;
+          background-clip: text;
+          /* ③ もともとの文字の色を透明にして背景を透けさせる */
+          -webkit-text-fill-color: transparent;
+          color: transparent; /* 万が一のフォールバック用 */
+
+          font-size: 1.2em;
+        }
+
+        h2 {
+          /* ① 背景にグラデーションを設定 */
+          background: linear-gradient(45deg, #ff007f, #4f00ff);
+          /* ② 背景を文字の形にくり抜く（Safari/Chrome用のベンダープレフィックス必須） */
+          -webkit-background-clip: text;
+          background-clip: text;
+          /* ③ もともとの文字の色を透明にして背景を透けさせる */
+          -webkit-text-fill-color: transparent;
+          color: transparent; /* 万が一のフォールバック用 */
+          
+          font-size: 1em;
+        }
+
+        .muted {
+          opacity: 0.65;
+          font-size: 0.85em;
+        }
+      }
+
+      /* 全スライド共通：音声再生ボタン（Reveal の UI より手前） */
+      .slide-audio-ui {
+        position: fixed;
+        right: 1.25rem;
+        bottom: 3rem;
+        z-index: 10000;
+        font-family: system-ui, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.45rem;
+        width: min(96vw, 16rem);
+      }
+      .slide-audio-ui button {
+        cursor: pointer;
+        padding: 0.55rem 0.75rem;
+        font-size: 0.9rem;
+        border-radius: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        background: rgba(40, 40, 40, 0.92);
+        color: #fff;
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .slide-audio-ui button:hover {
+        background: rgba(70, 70, 70, 0.95);
+      }
+      .slide-audio-ui button:focus-visible {
+        outline: 2px solid #4fc3f7;
+        outline-offset: 2px;
       }
     </style>
   </head>
   <body>
+    <div
+      class="slide-audio-ui"
+      id="slide-audio-ui"
+      role="group"
+      aria-label="音声トラック"
+    ></div>
+    <audio id="slide-audio" preload="metadata"></audio>
+
     <div class="reveal">
       <div class="slides">
-        <section>
-          <h1>スライド 1</h1>
-          <p>ダミー用の1ページ目です。</p>
-          <p class="muted">→ キーで次へ（矢印 / Space）</p>
+        <section style="padding-top: 4em;">
+          <h1>AIに聞いても教えてくれない節約HACK
+            <br>
+            <span style="font-size: 0.8em;">〜これであなたも節約王〜</span>
+          </h1>
+          <p style="margin-top: 2em;">
+            レタープレス株式会社　Webソリューショングループ<br>
+            森 渉<br>
+            2026/06/14
+          </p>
         </section>
 
         <section>
-          <h2>スライド 2</h2>
-          <p>プレースホルダー文言です。</p>
-          <ul>
-            <li>項目 A</li>
-            <li>項目 B</li>
-          </ul>
+          <h2>自己紹介</h2>
+          <table>
+            <tr>
+              <th>画像</th>
+              <td>
+                <img src="assets/moriwataru.png" alt="森 渉" style="width: 100px; height: 100px; margin-block: 0;">
+              </td>
+            </tr>
+            <tr>
+              <th>名前</th>
+              <td>森 渉（もりわたる）</td>
+            </tr>
+            <tr>
+              <th>年齢</th>
+              <td>37歳</td>
+            </tr>
+            <tr>
+              <th>出身</th>
+              <td>広島県</td>
+            </tr>
+            <tr>
+              <th>MBTI</th>
+              <td>ISTJ（管理者）</td>
+            </tr>
+            <tr>
+              <th>仕事</th>
+              <td>主にWordpressやAstroを使ってWebサイトの構築や更新をしています</td>
+            </tr>
+            <tr>
+              <th>株</th>
+              <td>SPACEXのIPO株の抽選の申し込みをしました</td>
+            </tr>
+          </table>
         </section>
 
         <section>
-          <h2>スライド 3</h2>
-          <p>最後のダミーページ。</p>
-          <p class="muted">おわり</p>
+          <h2>AIに節約方法を聞くと…</h2>
+          <ol style="font-size: 0.5em;">
+            <li class="fragment highlight-red" data-fragment-index="1">格安SIMへの乗り換え</li>
+            <li class="fragment highlight-red" data-fragment-index="1">使っていないサブスクの解約</li>
+            <li>保険の不要な特約を外す</li>
+            <li>大手の電気・ガス会社の切り替え</li>
+            <li>プライベートブランド（PB）の活用</li>
+            <li>買い物前の「時給換算」計算</li>
+            <li>カゴに入れた後の「1週間冷却」</li>
+            <li>空腹時の買い物禁止</li>
+            <li>経済圏の一本化</li>
+            <li>ふるさと納税で生活必需品を狙う</li>
+            <li>ウエル活（毎月20日）の利用</li>
+            <li>キャッシュレス決済の徹底</li>
+            <li>節水シャワーヘッドへの交換</li>
+            <li>温水洗浄便座のヒーターOFF</li>
+            <li>エアコンは「自動運転」＋「サーキュレーター」</li>
+            <li>冷蔵庫「7割」・冷凍庫「パンパン」収納</li>
+            <li>ネット型自動車保険への切り替え</li>
+            <li class="fragment highlight-red" data-fragment-index="1">先取り貯金を始める</li>
+            <li>クレカの利用明細をプッシュ通知にする</li>
+            <li>不用品を売って部屋のサイズをダウン</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>格安SIMへの乗り換え</h2>
+          <table>
+            <tr>
+              <th>データ容量</th>
+              <th>大手キャリア</th>
+              <th>格安SIM<br>サブブランド</th>
+              <th><span class="fragment" data-fragment-index="1" style="color: red;">OCN モバイルONE</span></th>
+            </tr>
+            <tr>
+              <th>小〜中容量<br>(3GB〜10GB)</th>
+              <td>約 5,500円</td>
+              <td>約 990円 〜 2,178円</td>
+              <td><span class="fragment" data-fragment-index="1" style="color: red;"></span></td>
+            </tr>
+            <tr>
+              <th>大容量<br>(20GB〜30GB)</th>
+              <td>約 6,500円</td>
+              <td>約 2,970円</td>
+              <td><span class="fragment" data-fragment-index="1" style="color: red;"></span></td>
+            </tr>
+            <tr>
+              <th>無制限</th>
+              <td>約 7,315円 〜 7,425円</td>
+              <td>約 3,278円 <br>(Rモバイル)</td>
+              <td><span class="fragment" data-fragment-index="1" style="color: red;"></span></td>
+            </tr>
+            <tr>
+              <th><span class="fragment" data-fragment-index="1" style="color: red;">500MB</span></th>
+              <td></td>
+              <td></td>
+              <td><span class="fragment" data-fragment-index="1" style="color: red;">550円</span></td>
+            </tr>
+          </table>
+        </section>
+
+        <section>
+          <h2>格安SIMへの乗り換え</h2>
+          <p>Q. 500MBだと足りないのでは？</p>
+          <p class="fragment" style="color: red;">A. 外でネットを使わなければOKです。</p>
+          <p>Q. 外で調べものしたい時は？</p>
+          <p class="fragment" style="color: red;">A. 家で調べてください。</p>
+          <p>Q. マップを使うので・・・</p>
+          <p class="fragment" style="color: red;">A. 家で事前にスクショしましょう。</p>
+          <p>Q. 緊急時に使うことあるので・・・</p>
+          <p class="fragment" style="color: red;">A. 緊急時はありません。</p>
+        </section>
+
+        <section>
+          <h2>使っていないサブスクの解約</h2>
+          <p>幽霊サブスク（使ってないサブスク）を3つ解約しただけで、これだけの現金が手元に残ります。</p>
+          <table>
+            <tr>
+              <th>サービス</th>
+              <th>月額料金</th>
+              <th>1年間の節約額</th>
+            </tr>
+            <tr>
+              <td>Netflix</td>
+              <td>1,590円</td>
+              <td>19,080円</td>
+            </tr>
+            <tr>
+              <td>Spotify</td>
+              <td>1,080円</td>
+              <td>12,960円</td>
+            </tr>
+            <tr>
+              <td>スマホ購入時のまま残っていた<br>謎のオプション</td>
+              <td>550円</td>
+              <td>6,600円</td>
+            </tr>
+            <tr>
+              <td>合計</td>
+              <td>3,220円</td>
+              <td>38,640円</td>
+            </tr>
+          </table>
+          <p class="fragment" style="color: red;">
+            あなたにサブスクは必要ありません。<br>
+            使ってるもの含めて、<u>すべて解約</u>しましょう。
+          </p>
+        </section>
+
+        <section>
+          <h2>使っていないサブスクの解約</h2>
+          <p>Q. 映画を見たい時は？</p>
+          <p class="fragment" style="color: red;">A. 金曜ロードショーで見てください。</p>
+          <p>Q. 音楽を聞きたい時は？</p>
+          <p class="fragment" style="color: red;">A. Youtubeで聞いてください。</p>
+          <p>Q. 子どもがNHK見るので・・・</p>
+          <p class="fragment" style="color: red;">A. NHKは解約しても見れます。</p>
+        </section>
+
+        <section>
+          <h2>先取り貯金を始める</h2>
+          <p>・先取り貯金とは？</p>
+          <p>　給料が入ったら使う前にまず貯金分を別口座に移してしまう方法です。残ったお金で生活するので、自然と支出が抑えられます。「余ったら貯金しよう」では貯まらない人に特に効果的です。</p>
+        </section>
+
+        <section>
+          <h2>先取り貯金を始める</h2>
+          <p>目標別の目安額（手取り20万円の場合）</p>
+          <table>
+            <tr>
+              <th>目標</th>
+              <th>月の積立額</th>
+              <th>1年後</th>
+            </tr>
+            <tr>
+              <th>緊急資金</th>
+              <th>1万円</th>
+              <th>12万円</th>
+            </tr>
+            <tr>
+              <th>旅行・大きな出費</th>
+              <th>2万円</th>
+              <th>24万円</th>
+            </tr>
+            <tr>
+              <th>本格的な資産形成</th>
+              <th>3〜4万円</th>
+              <th>36〜48万円</th>
+            </tr>
+            <tr class="fragment" style="color: red;">
+              <th></th>
+              <th>20万円</th>
+              <th>240万円</th>
+            </tr>
+          </table>
+        </section>
+
+        <section>
+          <h2>先取り貯金を始める</h2>
+          <p>Q. 家賃は？</p>
+          <p class="fragment" style="color: red;">A. 実家に住みましょう。</p>
+          <p>Q. 推し活代は？</p>
+          <p class="fragment" style="color: red;">A. 無料の範囲で推してください。</p>
+          <p>Q. スタバの新作飲みたいです。</p>
+          <p class="fragment" style="color: red;">A. 飲んではいけません。</p>
+        </section>
+
+        <section>
+          <h2>まとめ</h2>
+          <p>スマホの通信サービスは500MBプラン</p>
+          <p>サブスクはすべて解約</p>
+          <p>給料はすべて貯金へ</p>
         </section>
       </div>
     </div>
 
-    <script src="node_modules/reveal.js/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
     <script>
       Reveal.initialize({
         hash: true,
         slideNumber: "c/t",
-        transition: "slide",
+        center: false,
+        parallaxBackgroundImage: 'assets/background.jpg',
+        parallaxBackgroundSize: 'auto 180%',
+        parallaxBackgroundHorizontal: 100,
+        parallaxBackgroundVertical: 0
       });
+
+      (function () {
+        /** 音声を増やすときはここに { id, label, src } を追加。src は index.html からの相対パス（例: assets/ファイル名.wav） */
+        var AUDIO_TRACKS = [
+          {
+            id: "001",
+            label: "こんにちは",
+            src: "assets/001_ずんだもん（ノーマル）_こんにちは.wav",
+          },
+          {
+            id: "002",
+            label: "レタープレス株式会社…",
+            src: "assets/002_ずんだもん（ノーマル）_レタープレス株式会….wav",
+          },
+          {
+            id: "003",
+            label: "ちょっとまってね",
+            src: "assets/003_ずんだもん（ノーマル）_ちょっとまってね.wav",
+          },
+        ];
+
+        var ui = document.getElementById("slide-audio-ui");
+        var audio = document.getElementById("slide-audio");
+        if (!ui || !audio) return;
+
+        var lastSrc = null;
+
+        function playTrack(src) {
+          if (!src) return;
+          var href = new URL(src, document.baseURI).href;
+          if (lastSrc !== href) {
+            audio.src = href;
+            lastSrc = href;
+            audio.load();
+          }
+          audio.pause();
+          audio.currentTime = 0;
+          var p = audio.play();
+          if (p && typeof p.catch === "function") {
+            p.catch(function () {});
+          }
+        }
+
+        var tracks = AUDIO_TRACKS.filter(function (t) {
+          return t && typeof t.src === "string" && t.label;
+        });
+        if (!tracks.length) return;
+
+        tracks.forEach(function (t) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.textContent = String(t.label);
+          b.setAttribute("aria-label", "再生: " + String(t.label));
+          b.addEventListener("click", function () {
+            playTrack(t.src);
+          });
+          ui.appendChild(b);
+        });
+      })();
     </script>
   </body>
 </html>
