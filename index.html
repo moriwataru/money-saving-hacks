@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ダミースライド（3ページ）</title>
+    <title>AIに聞いても教えてくれない節約HACK</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css"
@@ -85,12 +85,12 @@
         flex-direction: column;
         align-items: stretch;
         gap: 0.45rem;
-        width: min(96vw, 16rem);
+        width: min(96vw, 14rem);
       }
       .slide-audio-ui button {
         cursor: pointer;
         padding: 0.55rem 0.75rem;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         border-radius: 6px;
         border: 1px solid rgba(255, 255, 255, 0.35);
         background: rgba(40, 40, 40, 0.92);
@@ -120,10 +120,7 @@
     <div class="reveal">
       <div class="slides">
         <section style="padding-top: 4em;">
-          <h1>AIに聞いても教えてくれない節約HACK
-            <br>
-            <span style="font-size: 0.8em;">〜これであなたも節約王〜</span>
-          </h1>
+          <h1>AIに聞いても教えてくれない節約HACK</h1>
           <p style="margin-top: 2em;">
             レタープレス株式会社　Webソリューショングループ<br>
             森 渉<br>
@@ -157,12 +154,16 @@
               <td>ISTJ（管理者）</td>
             </tr>
             <tr>
+              <th>所属</th>
+              <td>レタープレス株式会社（2025年12月〜）</td>
+            </tr>
+            <tr>
               <th>仕事</th>
               <td>主にWordpressやAstroを使ってWebサイトの構築や更新をしています</td>
             </tr>
             <tr>
-              <th>株</th>
-              <td>SPACEXのIPO株の抽選の申し込みをしました</td>
+              <th>余談</th>
+              <td>SPACEXのIPO株を買いました。</td>
             </tr>
           </table>
         </section>
@@ -236,9 +237,9 @@
           <p>Q. 外で調べものしたい時は？</p>
           <p class="fragment" style="color: red;">A. 家で調べてください。</p>
           <p>Q. マップを使うので・・・</p>
-          <p class="fragment" style="color: red;">A. 家で事前にスクショしましょう。</p>
+          <p class="fragment" style="color: red;">A. 頭に記憶してください。</p>
           <p>Q. 緊急時に使うことあるので・・・</p>
-          <p class="fragment" style="color: red;">A. 緊急時はありません。</p>
+          <p class="fragment" style="color: red;">A. 家にいれば緊急時はありません。</p>
         </section>
 
         <section>
@@ -329,10 +330,14 @@
           <h2>先取り貯金を始める</h2>
           <p>Q. 家賃は？</p>
           <p class="fragment" style="color: red;">A. 実家に住みましょう。</p>
-          <p>Q. 推し活代は？</p>
-          <p class="fragment" style="color: red;">A. 無料の範囲で推してください。</p>
+          <p>Q. 食事代は？</p>
+          <p class="fragment" style="color: red;">A. 実家に住みましょう。</p>
+          <p>Q. 服代は？</p>
+          <p class="fragment" style="color: red;">A. 今着ている服がありますよね。</p>
           <p>Q. スタバの新作飲みたいです。</p>
           <p class="fragment" style="color: red;">A. 飲んではいけません。</p>
+          <p>Q. ミスドのもっちゅりんが食べたいです。</p>
+          <p class="fragment" style="color: red;">A. 食べなくても生きていけますよね。</p>
         </section>
 
         <section>
@@ -340,6 +345,9 @@
           <p>スマホの通信サービスは500MBプラン</p>
           <p>サブスクはすべて解約</p>
           <p>給料はすべて貯金へ</p>
+          <p style="margin-top: 5em;">使用ツール</p>
+          <p>・声：VOICEVOX</p>
+          <p>・スライド：Reveal.js</p>
         </section>
       </div>
     </div>
@@ -359,20 +367,110 @@
       (function () {
         /** 音声を増やすときはここに { id, label, src } を追加。src は index.html からの相対パス（例: assets/ファイル名.wav） */
         var AUDIO_TRACKS = [
-          {
-            id: "001",
-            label: "こんにちは",
-            src: "assets/001_ずんだもん（ノーマル）_こんにちは.wav",
+        {
+            id: "00",
+            label: "00",
+            src: "assets/00みなさんこんにちは。...パチパチパチパチ.wav",
           },
           {
-            id: "002",
-            label: "レタープレス株式会社…",
-            src: "assets/002_ずんだもん（ノーマル）_レタープレス株式会….wav",
+            id: "01",
+            label: "01",
+            src: "assets/01それではタイトルに参ります。...よろしくお願いします。.wav",
           },
           {
-            id: "003",
+            id: "02",
+            label: "02",
+            src: "assets/02まずは自己紹介をします。...テンバガーになってくれることを願ってます。.wav",
+          },
+          {
+            id: "03",
+            label: "03",
+            src: "assets/03それでは本題に参ります。...今回はその中から、格安シムへの乗り換えと、使っていないサブスクの解約と、先取り貯金を始めるの3つについて、お話しします。.wav",
+          },
+          {
+            id: "04",
+            label: "04",
+            src: "assets/04まずはじめに格安シムへの乗り換えについてお話します。...圧倒的安さですね。.wav",
+          },
+          {
+            id: "05",
+            label: "05",
+            src: "assets/05では Q and A に行きます。...家にいれば緊急時はありません。.wav",
+          },
+          {
+            id: "06",
+            label: "06",
+            src: "assets/06次。...そうすればサブスク代は0円になります。.wav",
+          },
+          {
+            id: "07",
+            label: "07",
+            src: "assets/07では Q and A に行きます。...NHKは解約しても見れます。.wav",
+          },
+          {
+            id: "08",
+            label: "08",
+            src: "assets/08次。...「余ったら貯金しよう」では貯まらない人に特に効果的です。.wav",
+          },
+          {
+            id: "09",
+            label: "09",
+            src: "assets/09そして、...これで圧倒的に貯金できますね。.wav",
+          },
+          {
+            id: "10",
+            label: "10",
+            src: "assets/10では Q and A に行きます。...そんなもの、食べなくても生きていけますよね。.wav",
+          },
+          {
+            id: "11",
+            label: "11",
+            src: "assets/11最後にまとめです。...パチパチパチパチ.wav",
+          },
+          {
+            id: "12",
+            label: "12　質疑応答",
+            src: "assets/12それでは質疑応答タイムです。...節約の相談でも結構ですよ。.wav",
+          },
+          {
+            id: "13",
+            label: "13　終了",
+            src: "assets/13では、私の発表を終了いたします。...以上、ずんだもんがお送りしました。.wav",
+          },
+          {
+            id: "14",
+            label: "ほかに質問ありますか？",
+            src: "assets/98ほかに質問ありますか？.wav",
+          },
+          {
+            id: "15",
             label: "ちょっとまってね",
-            src: "assets/003_ずんだもん（ノーマル）_ちょっとまってね.wav",
+            src: "assets/99ちょっとまってね.wav",
+          },
+          {
+            id: "16",
+            label: "まつざわれいさん",
+            src: "assets/まつざわれいさん.wav",
+          },
+          {
+            id: "17",
+            label: "たぞえはるきさん",
+            src: "assets/たぞえはるきさん.wav",
+          },
+          {
+            id: "18",
+            label: "ながおかふみやさん",
+            src: "assets/ながおかふみやさん.wav",
+          },
+          {
+            id: "19",
+            label: "もうりかずきさん",
+            src: "assets/もうりかずきさん.wav",
+          },
+          {
+            id: "20",
+            label: "まるもとしょうまさん",
+            src: "assets/まるもとしょうまさん.wav",
           },
         ];
 
